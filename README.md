@@ -12,4 +12,9 @@ Outra ferramenta muito util para usuário de Prompt é o CURL.
 As requisições devem ser feitas para o endpoint base:
 https://portal.primesw.com.br/gateway	
 
+O administrador utilizado na autenticação deverá possuir a permissão: "Integração"
+
+Exemplo de solicitação para inserção de registros REP-A
+curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"records\":[{\"pis\":\"016355255061\",\"dateTime\":\"2022-10-05 12:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}}]}" https://portal.primesw.com.br/gateway/rest/repa/records_upload
+
 Seguido do PATH para o service desejado.
