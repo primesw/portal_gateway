@@ -17,7 +17,7 @@ O administrador utilizado na autenticação deverá possuir a permissão: "Integ
 Exemplo de solicitação para AFD (portaria 671):
 
 (NFR = "99999999999999999" para REP-A)
-curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" http://localhost:8080/gateway/rest/portaria671/afd
+curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
 
 Exemplo de solicitação para AFD (portaria 1510):
 
