@@ -14,6 +14,16 @@ https://portal.primesw.com.br/gateway
 
 O administrador utilizado na autenticação deverá possuir a permissão: "Integração"
 
+Exemplo de solicitação para AFD (portaria 671):
+
+(NFR = "99999999999999999" para REP-A)
+curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" http://localhost:8080/gateway/rest/portaria671/afd
+
+Exemplo de solicitação para AFD (portaria 1510):
+
+curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"nsr\":0}" https://portal.primesw.com.br/gateway/rest/afd
+curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"dataHoraInicio\": \"\", \"dataHoraTermino\":\"\"}" https://portal.primesw.com.br/gateway/rest/afd
+
 Exemplo de solicitação para inserção de registros REP-A:
 
 curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"records\":[{\"pis\":\"016355255061\",\"dateTime\":\"2022-10-05 12:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}}]}" https://portal.primesw.com.br/gateway/rest/repa/records_upload
