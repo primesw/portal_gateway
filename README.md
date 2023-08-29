@@ -28,7 +28,8 @@ curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\
 Exemplo de solicitação para inserção de registros REP-A:
 
 *Obrigatorio informar CPF (caso contrário não emite AFD 671)
+*Opcional informar CNPJ
 
-curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"records\":[{\"pis\":\"08474306343\",\"dateTime\":\"2022-10-05 12:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}},{\"cpf\":\"64661539087\",\"dateTime\":\"2022-10-05 13:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}}]}" https://portal.primesw.com.br/gateway/rest/repa/records_upload
+curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"records\":[{\"cnpj\":\"17930815000172\",\"pis\":\"08474306343\",\"dateTime\":\"2022-10-05 12:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}},{\"cpf\":\"64661539087\",\"dateTime\":\"2022-10-05 13:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}}]}" https://portal.primesw.com.br/gateway/rest/repa/records_upload
 
 Seguido do PATH para o service desejado.
