@@ -20,6 +20,9 @@ Exemplo de solicitação para AFD (portaria 671):
 
 curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
 
+Assinado (p7s)
+curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"82.231.739/0001-79\",\"nfr\":\"00009003660002808\", \"dataHoraInicio\": \"20230101\", \"dataHoraTermino\":\"20230201\"}" http://localhost:8080/gateway/rest/portaria671/afd-signed --output afd.zip
+
 Exemplo de solicitação para AFD (portaria 1510):
 
 curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"nsr\":0}" https://portal.primesw.com.br/gateway/rest/afd
