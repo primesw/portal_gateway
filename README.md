@@ -16,31 +16,31 @@ O administrador utilizado na autenticação deverá possuir a permissão: "Integ
 
 ## Exemplo de solicitação de Espelho Ponto:
 
-curl -X POST -H 'Content-Type: application/json' -u 'login:password' \
--d '{"employerDoc":"17930815000172","employeeIdType":"pis","employeeId":"08474306343", "dataHoraInicio":"20240701","dataHoraTermino":"20240721"}' \
-https://portal.primesw.com.br/gateway/rest/leaf
+  curl -X POST -H 'Content-Type: application/json' -u 'login:password' \
+  -d '{"employerDoc":"17930815000172","employeeIdType":"pis","employeeId":"08474306343", "dataHoraInicio":"20240701","dataHoraTermino":"20240721"}' \
+  https://portal.primesw.com.br/gateway/rest/leaf
 
 ## Exemplo de solicitação para AFD (portaria 671):
 
 (NFR = "99999999999999999" para REP-A)
 
-curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
+  curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
 
 Assinado (p7s)
-curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"82.231.739/0001-79\",\"nfr\":\"00009003660002808\", \"dataHoraInicio\": \"20230101\", \"dataHoraTermino\":\"20230201\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd-signed --output afd.zip
+  curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"82.231.739/0001-79\",\"nfr\":\"00009003660002808\", \"dataHoraInicio\": \"20230101\", \"dataHoraTermino\":\"20230201\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd-signed --output afd.zip
 
 * Filtrar por Device ID (opcional):
 
 ** JSON
-curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"83.310.441/0022-41\", \"deviceId\":\"546908\", \"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20240311\", \"dataHoraTermino\":\"20240311\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
+  curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"83.310.441/0022-41\", \"deviceId\":\"546908\", \"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20240311\", \"dataHoraTermino\":\"20240311\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
 
 ** ZIP com p7s
-curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"83.310.441/0022-41\", \"deviceId\":\"546908\", \"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20240311\", \"dataHoraTermino\":\"20240311\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd-signed --output afd.zip
+  curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"83.310.441/0022-41\", \"deviceId\":\"546908\", \"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20240311\", \"dataHoraTermino\":\"20240311\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd-signed --output afd.zip
 
 ## Exemplo de solicitação para AFD (portaria 1510):
 
-curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"nsr\":0}" https://portal.primesw.com.br/gateway/rest/afd
-curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"dataHoraInicio\": \"\", \"dataHoraTermino\":\"\"}" https://portal.primesw.com.br/gateway/rest/afd
+  curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"nsr\":0}" https://portal.primesw.com.br/gateway/rest/afd
+  curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"nfr\":\"\", \"dataHoraInicio\": \"\", \"dataHoraTermino\":\"\"}" https://portal.primesw.com.br/gateway/rest/afd
 
 ## Exemplo de solicitação para inserção de registros REP-A:
 
