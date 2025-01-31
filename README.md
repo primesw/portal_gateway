@@ -51,3 +51,8 @@ Assinado (p7s)
 curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"records\":[{\"cnpj\":\"17930815000172\",\"pis\":\"08474306343\",\"dateTime\":\"2022-10-05 12:00:00\",\"id\":\"meuid\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}},{\"cpf\":\"64661539087\",\"dateTime\":\"2022-10-05 13:00:00\",\"position\":{\"latitude\":1345.2,\"longitude\":65765.8,\"country\":\"BR\",\"uf\":\"SP\",\"city\":\"Sao Paulo\",\"address\":\"Av Paulista, 22838\"}}]}" https://portal.primesw.com.br/gateway/rest/repa/records_upload
 
 Seguido do PATH para o service desejado.
+
+## Exemplo de solicitação para inserção de registros REP-CP por Arquivo AFD:
+
+curl -X POST -H "Content-Type: multipart/form-data" -F 'data=@/path/arquivoafd.txt' \
+-u "login:pass" https://portal.primesw.com.br/gateway/rest/afd/upload
