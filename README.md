@@ -27,7 +27,15 @@ O administrador utilizado na autenticação deverá possuir a permissão: "Integ
 
 (NFR = "99999999999999999" para REP-A)
 
-  curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
+```
+    curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
+    curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
+```
+
+    uploadedStart (optional)
+```
+    curl -X POST -H 'Content-Type: application/json' -u "login:password" -d "{\"cnpj\":\"17930815000172\",\"nfr\":\"99999999999999999\", \"dataHoraInicio\": \"20180301\", \"dataHoraTermino\":\"20180330\", \"uploadedStart\":\"20180330T153000\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd
+```
 
 Assinado (p7s)
   curl -X POST -H 'Content-Type: application/json' -u "main@primesw.com.br:536853" -d "{\"cnpj\":\"82.231.739/0001-79\",\"nfr\":\"00009003660002808\", \"dataHoraInicio\": \"20230101\", \"dataHoraTermino\":\"20230201\"}" https://portal.primesw.com.br/gateway/rest/portaria671/afd-signed --output afd.zip
