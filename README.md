@@ -67,3 +67,23 @@ Seguido do PATH para o service desejado.
 
 curl -X POST -H "Content-Type: multipart/form-data" -F 'data=@/path/arquivoafd.txt' \
 -u "login:pass" https://portal.primesw.com.br/gateway/rest/afd/upload
+
+## Funcionarios
+
+    curl -X PUT -H 'Content-Type: application/json' -u "login:pass" \
+    -d "{"employee":{"active":true,"profile":"MOBI FACIAL","cpf":"00138601003","pis":"23659295201","id":753986,"name":"TESTE WS","email":"email@dominio.com","password":"mypass",
+    "photoB64":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..."}" https://portal.primesw.com.br/gateway/rest/employee
+
+## BI
+
+    curl -X GET -H 'Content-Type: application/json' -u "login:pass" \
+    https://portal.primesw.com.br/gateway/rest/bi?start=20250201&end=20250228
+
+    start (optional) last year
+    end (optional) last year
+
+## Afastamentos
+
+    curl -X PUT -H 'Content-Type: application/json' -u "login:pass" \
+    -d "{"absence":{"cnpj":"17.930.815/0001-72","cpf":"13267632021","dateStart":"01032026","dateEnd":"15032026","typeIdentifier":"FERIAS"}" \
+    https://portal.primesw.com.br/gateway/rest/absence
