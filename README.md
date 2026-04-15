@@ -87,3 +87,12 @@ curl -X POST -H "Content-Type: multipart/form-data" -F 'data=@/path/arquivoafd.t
     curl -X PUT -H 'Content-Type: application/json' -u "login:pass" \
     -d "{"absence":{"cnpj":"17.930.815/0001-72","cpf":"13267632021","dateStart":"01032026","dateEnd":"15032026","typeIdentifier":"FERIAS"}" \
     https://portal.primesw.com.br/gateway/rest/absence
+
+## Feriados
+
+    curl -X PUT -H 'Content-Type: application/json' -u login:pass" \
+    -d "{"holiday":{"descriptionHolidayPack":"nacionais","description":"sexta feira santa","date":"03042026","fixed":true}" \
+    https://portal.primesw.com.br/gateway/rest/holiday
+
+    curl -X GET -H 'Content-Type: application/json' -u login:pass" \
+    https://portal.primesw.com.br/gateway/rest/holiday?pack=packname
