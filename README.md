@@ -20,6 +20,12 @@ O administrador utilizado na autenticação deverá possuir a permissão: "Integ
   -d '{"employerDoc":"17930815000172","employeeIdType":"pis","employeeId":"08474306343", "dataHoraInicio":"20240701","dataHoraTermino":"20240721"}' \
   https://portal.primesw.com.br/gateway/rest/leaf
 
+  curl -X POST -H 'Content-Type: application/json' -u 'login:password' \
+  -d '{"hiringId":"MATRICULADACONTRATACAO1234", "dataHoraInicio":"20240701","dataHoraTermino":"20240721"}' \
+  https://portal.primesw.com.br/gateway/rest/leaf
+
+    hiringId (opcional, elimina necessidade de outros identificadores)
+
     employerDoc (opcional)
     employeeIdType pis | cpf
 
