@@ -96,9 +96,14 @@ curl -X POST -H "Content-Type: multipart/form-data" -F 'data=@/path/arquivoafd.t
 
 ## Feriados
 
-    curl -X PUT -H 'Content-Type: application/json' -u login:pass" \
+    curl -X PUT -H 'Content-Type: application/json' -u "login:pass" \
     -d "{"holiday":{"descriptionHolidayPack":"nacionais","description":"sexta feira santa","date":"03042026","fixed":true}" \
     https://portal.primesw.com.br/gateway/rest/holiday
 
-    curl -X GET -H 'Content-Type: application/json' -u login:pass" \
+    curl -X GET -H 'Content-Type: application/json' -u "login:pass" \
     https://portal.primesw.com.br/gateway/rest/holiday?pack=packname
+
+## Integration LOG
+
+    curl -X GET -H 'Content-Type: application/json' -u "login:pass" \
+    http://localhost:8080/gateway/rest/logintegracao/recentes
